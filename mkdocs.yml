@@ -1,0 +1,45 @@
+site_name: Torchradio
+
+repo_url: https://github.com/dewcservices/torchradio
+repo_name: dewcservices/torchradio
+
+theme:
+  name: material
+  language: en
+
+  logo: logo.svg
+  favicon: logo.svg
+
+  icon:
+    repo: fontawesome/brands/git-alt
+
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: deep purple
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: deep purple
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+plugins:
+  - autorefs
+  - mkdocs-jupyter:
+      execute: false
+  - mkdocstrings
+  - search

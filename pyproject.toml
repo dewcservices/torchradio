@@ -1,0 +1,92 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "torchradio"
+version = "0.0.1"
+authors = [
+  { name="Daniel Gibbons", email="daniel.gibbons@dewc.com" },
+]
+description = "A PyTorch differentiable RF simulation environment"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "chart_studio",
+    "ipykernel",
+    "ipywidgets",
+    "kaleido",
+    "loguru",
+    "matplotlib",
+    "nbformat",
+    "numpy",
+    "pandas",
+    "scikit-commpy",
+    "scipy",
+    "torch",
+    "tqdm",
+    "types-tqdm",
+    "widgetsnbextension",
+]
+
+[project.optional-dependencies]
+docs = [
+    "mkdocs",
+    "mkdocs-jupyter",
+    "mkdocs-material",
+    "mkdocstrings[python]",
+    "mknotebooks",
+    "pymdown-extensions",
+]
+
+dev = [
+    "black",
+    "black[jupyter]",
+    "coverage",
+    "lefthook",
+    "mypy",
+    "nbqa",
+    "pre-commit",
+    "pytest",
+    "ruff",
+    "torchradio[docs]",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/dewcservices/torchradio"
+"Bug Tracker" = "https://github.com/dewcservices/torchradio/issues"
+
+[tool.mypy]
+disable_error_code = ["call-overload"]
+
+[tool.ruff]
+select = ["ALL"]
+
+ignore = [
+    "ANN002",
+    "ANN003",
+    "ANN101",
+    "ANN102",
+    "D100",
+    "D104",
+    "D211",
+    "D213",
+    "D407",
+    "E501",
+    "G004",
+    "INP001",
+    "PGH003",
+    "T201",
+    "T203",
+    "TCH001",
+    "TCH002",
+    "TCH003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/{tests,docs,examples}/*" = ["S101"]
