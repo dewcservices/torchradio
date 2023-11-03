@@ -28,15 +28,6 @@ Install the `torchradio` package by running:
 pip install git+https://github.com/dewcservices/torchradio.git
 ```
 
-## Documentation
-
-The documentation will eventually be hosted on DEWC's internal network. For now, you can view the documentation by following these steps:
-
-1. Clone the repository via HTTPS or SSH.
-2. `cd` into the cloned repository.
-3. Run `pip install . [docs]` to install the documentation's dependencies.
-4. Run `mkdocs serve` and navigate to `localhost:8000` in the browser.
-
 ## Contributing
 
 New contributors are always welcome! If you would like to contribute, it is recommended you set up your development environment using the following instructions.
