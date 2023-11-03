@@ -4,6 +4,9 @@
 
 A differentiable RF simulation environment written in PyTorch.
 
+> [!NOTE]
+> `torchradio` is *not* affiliated with the official PyTorch project and should not be considered as a PyTorch-supported library like `torchvision` or `torchaudio`.
+
 ## Overview
 `torchradio` provides an ecosystem for creating novel radios using machine learning. Specifically, `torchradio` lets engineers train parameterized radios with gradient-based methods using [PyTorch](https://pytorch.org/). `torchradio` accomplishes this by modelling common RF effects with auto-differentiable blocks that allow gradients to backpropagate from an objective function.
 
@@ -24,15 +27,6 @@ Install the `torchradio` package by running:
 ```
 pip install git+https://github.com/dewcservices/torchradio.git
 ```
-
-## Documentation
-
-The documentation will eventually be hosted on DEWC's internal network. For now, you can view the documentation by following these steps:
-
-1. Clone the repository via HTTPS or SSH.
-2. `cd` into the cloned repository.
-3. Run `pip install . [docs]` to install the documentation's dependencies.
-4. Run `mkdocs serve` and navigate to `localhost:8000` in the browser.
 
 ## Contributing
 
