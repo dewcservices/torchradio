@@ -4,6 +4,9 @@
 
 A differentiable RF simulation environment written in PyTorch.
 
+> [!NOTE]
+> `torchradio` is *not* affiliated with the official PyTorch project and should not be considered as a PyTorch-supported library like `torchvision` or `torchaudio`.
+
 ## Overview
 `torchradio` provides an ecosystem for creating novel radios using machine learning. Specifically, `torchradio` lets engineers train parameterized radios with gradient-based methods using [PyTorch](https://pytorch.org/). `torchradio` accomplishes this by modelling common RF effects with auto-differentiable blocks that allow gradients to backpropagate from an objective function.
 
