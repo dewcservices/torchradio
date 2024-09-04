@@ -4,6 +4,7 @@ import time
 
 import pytest
 import torch
+
 from torchradio import (
     Receiver,
     Reception,
@@ -16,12 +17,12 @@ from torchradio.env import NullEnvironment
 from torchradio.position import get_null_distribution
 
 
-@pytest.fixture()
+@pytest.fixture
 def n_timesteps() -> int:
     return 100
 
 
-@pytest.fixture()
+@pytest.fixture
 def transmission_algorithms() -> tuple[TransmissionAlgorithm, TransmissionAlgorithm]:
     def transmit1(n_timesteps: int, batch_size: int = 1) -> Transmission:
         return Transmission(
@@ -41,7 +42,7 @@ def transmission_algorithms() -> tuple[TransmissionAlgorithm, TransmissionAlgori
     return transmit1, transmit2
 
 
-@pytest.fixture()
+@pytest.fixture
 def reception_algorithms() -> tuple[ReceptionAlgorithm, ReceptionAlgorithm]:
     def receive1(signal: torch.Tensor) -> Reception:
         # returns the sum of the inputs

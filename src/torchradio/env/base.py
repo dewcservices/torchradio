@@ -15,7 +15,6 @@ from torchradio.types import DeviceLogs
 
 
 class BaseEnvironment(ABC):
-
     """Abstract base class for `Torchradio` environments.
 
     The core concept behind `Torchradio` is the use of a common simulation environment
@@ -153,6 +152,7 @@ class BaseEnvironment(ABC):
         Raises:
             ValueError: No receivers provided.
             TypeError: A non-`Transmitter` was found in `transmitters` or a non-`Receiver` was found in `receivers`.
+
         """
         if len(receivers) == 0:
             err = f"{self.__class__.__name__} requires at least one receiver: {len(receivers)=}"
@@ -284,6 +284,7 @@ class BaseEnvironment(ABC):
         Raises:
             ValueError: If a device cannot be suitably placed within `max_n_attempts`. This indicates
                 that the provided `SpatialDistribution` is unsuitable for the current environment.
+
         """
         positions = {}
         for device_name, device in devices.items():
@@ -318,6 +319,7 @@ class BaseEnvironment(ABC):
         Args:
             show: Show an interactive plot within the Python process.
             save_path: Path to save the visualization to.
+
         """
         raise NotImplementedError
 
@@ -335,6 +337,7 @@ class BaseEnvironment(ABC):
 
         Returns:
             True if the position is valid according to the environment's specifications.
+
         """
         ...
 
@@ -347,6 +350,7 @@ class BaseEnvironment(ABC):
 
         Returns:
             A dictionary mapping each receiver to a complex-valued input signal (not including background noise).
+
         """
         ...
 
@@ -365,6 +369,7 @@ class BaseEnvironment(ABC):
         Returns:
             A dictionary mapping each receiver to a complex-valued background noise
                 tensor with shape `[n_timesteps, batch_size]`.
+
         """
         ...
 
@@ -392,6 +397,7 @@ class BaseEnvironment(ABC):
                 >>> env.is_differentiable()
                 True
                 ```
+
         """
         self.reset()
 

@@ -11,7 +11,6 @@ COMPLEX_DTYPE = torch.complex64
 
 @dataclass
 class Transmission:
-
     """The core output type for any transmitter. A `Transmission` consists of two parts: a signal and a metadata dictionary.
 
     Args:
@@ -19,6 +18,7 @@ class Transmission:
         metadata: Used to record arbitrary information that can be used by downstream loss functions.
             The most commonly used metadata key is 'bits' to capture the bits before the `TransmissionAlgortihm`
             produces an output signal.
+
     """
 
     signal: torch.Tensor
@@ -32,7 +32,6 @@ the receiver analogue of `Transmission.metadata`."""
 
 @dataclass
 class DeviceLogs:
-
     """Captures the `Transmission` and `Reception` logs from a simulation run.
 
     Each `Transmission` and `Reception` is associated with a device name.
@@ -40,6 +39,7 @@ class DeviceLogs:
     Args:
         tx: Maps device names to `Transmission`s.
         rx: Maps device names to `Reception`s.
+
     """
 
     tx: dict[str, Transmission]
@@ -47,7 +47,6 @@ class DeviceLogs:
 
 
 class TransmissionAlgorithm(Protocol):
-
     """All transmitters in Torchradio are required to implement a `TransmissionAlgorithm`.
 
     A `TransmissionAlgorithm` is any `Callable` that produces a `Transmission` with a complex-valued
@@ -69,7 +68,6 @@ class TransmissionAlgorithm(Protocol):
 
 
 class ReceptionAlgorithm(Protocol):
-
     """All receivers in Torchradio are required to implement a `ReceptionAlgorithm`.
 
     A `ReceptionAlgorithm` is any `Callable` that produces a `Reception` from an input `signal`.

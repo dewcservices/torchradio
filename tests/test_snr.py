@@ -3,33 +3,34 @@
 import numpy as np
 import pytest
 import torch
+
 from torchradio import Receiver, Transmitter
 from torchradio.algorithm import Modem
 from torchradio.env.null import ControlledSNREnvironment
 from torchradio.position import get_null_distribution
 
 
-@pytest.fixture()
+@pytest.fixture
 def n_timesteps() -> int:
     return 100
 
 
-@pytest.fixture()
+@pytest.fixture
 def modem() -> Modem:
     return Modem("psk", 2)
 
 
-@pytest.fixture()
+@pytest.fixture
 def transmitter(modem: Modem) -> Transmitter:
     return Transmitter(modem.tx, get_null_distribution())
 
 
-@pytest.fixture()
+@pytest.fixture
 def receiver(modem: Modem) -> Receiver:
     return Receiver(modem.rx, get_null_distribution())
 
 
-@pytest.fixture()
+@pytest.fixture
 def env() -> ControlledSNREnvironment:
     return ControlledSNREnvironment(0)
 

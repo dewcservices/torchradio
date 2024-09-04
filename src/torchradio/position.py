@@ -8,13 +8,13 @@ import torch
 
 @dataclass
 class Position:
-
     """A concrete instantiation of a device's position in the environment.
 
     Args:
         x: x coordinate
         y: y coordinate
         z: z coordinate
+
     """
 
     x: float
@@ -23,7 +23,6 @@ class Position:
 
 
 class SpatialDistribution(Protocol):
-
     """All devices are required to include a `SpatialDistribution`.
 
     A `SpatialDistribution` is any `Callable` returns a randomly sampled `Position` each time it is invoked.
@@ -35,6 +34,7 @@ class SpatialDistribution(Protocol):
 
         Returns
             A randomly sampled `Position`.
+
         """
         ...
 
@@ -113,5 +113,6 @@ def get_null_distribution(
         >>> distribution()
         Position(x=1, y=2, z=0)
         ```
+
     """
     return lambda: Position(x, y, z)

@@ -18,8 +18,8 @@ jobs:
           python -m pip install .[dev] --upgrade pip
       - name: Code quality
         run: |
-          black . --check
-          ruff .
+          ruff format --check
+          ruff check
           nbqa ruff .
       - name: Static analysis
         run: |
@@ -90,7 +90,7 @@ jobs:
 
     steps:
     - name: Download all the dists
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: python-package-distributions
         path: dist/

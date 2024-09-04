@@ -7,12 +7,10 @@ from torchradio.env.base import BaseEnvironment
 
 
 class NullEnvironment(BaseEnvironment):
-
     """The simplest possible environment with ideal conditions."""
 
     def _compute_propagation_parameters(self) -> None:
         """No propagation parameters to compute."""
-        ...
 
     def _in_bounds(self, position: Position) -> bool:  # noqa: ARG002
         """Everything is in bounds."""
@@ -36,7 +34,6 @@ class NullEnvironment(BaseEnvironment):
 
 
 class ControlledSNREnvironment(NullEnvironment):
-
     """A single-channel environment that applies additive white Gaussian noise (AWGN) to a specific signal-to-noise ratio (SNR).
 
     A null environment with controllable SNR that supports a single transmitter and receiver pair.
@@ -63,6 +60,7 @@ class ControlledSNREnvironment(NullEnvironment):
 
         Returns
             Current signal-to-noise ratio in dB.
+
         """
         return self._snr.numpy()[0]
 
@@ -107,7 +105,6 @@ class ControlledSNREnvironment(NullEnvironment):
 
 
 class RandomBoundedSNREnvironment(ControlledSNREnvironment):
-
     """A single-channel environment that applies a random amount of additive white Gaussian noise (AWGN) according to preset SNR bounds.
 
     A null environment with bounded SNR that supports a single transmitter and receiver pair.
@@ -147,7 +144,6 @@ class RandomBoundedSNREnvironment(ControlledSNREnvironment):
 
 
 class RandomAWGNEnvironment(NullEnvironment):
-
     """A null environment that produces a random level of background noise for each receiver.
 
     This random level is sampled per receiver according to the power bounds supplied at instantiation.

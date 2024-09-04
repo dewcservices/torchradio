@@ -17,7 +17,6 @@ from torchradio.types import COMPLEX_DTYPE
 
 
 class DenseTransmissionAlgorithm(nn.Module):
-
     """An opinionated `TransmissionAlgorithm` that uses trainable dense layers.
 
     Do not expect this algorithm to be especially performant. It is an example to help
@@ -79,7 +78,6 @@ class DenseTransmissionAlgorithm(nn.Module):
 
 
 class DenseReceptionAlgorithm(nn.Module):
-
     """An opinionated `ReceptionAlgorithm` that uses trainable dense layers.
 
     Do not expect this algorithm to be especially performant. It is an example to help
@@ -153,7 +151,6 @@ class DenseReceptionAlgorithm(nn.Module):
 
 
 class DenseRadio(nn.Module):
-
     """A convenient wrapper for `DenseTransmissionAlgorithm` and `DenseReceptionAlgorithm`.
 
     `DenseRadio` guarantees that the underlying `TransmissionAlgorithm` and `ReceptionAlgorithm` are
