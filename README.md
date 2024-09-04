@@ -2,14 +2,12 @@
 
 # Torchradio
 
-`torchradio` is a Python library for building differentiable RF simulations.
+Torchradio is a Python library for building differentiable RF simulations.
 
 > [!NOTE]
-> `torchradio` is *not* affiliated with the official PyTorch project.
+> Torchradio is *not* affiliated with the official PyTorch project.
 
 ## Installation
-
-Install `torchradio` by running:
 
 ```
 pip install torchradio
@@ -90,20 +88,20 @@ See [our notebooks](https://dewcservices.github.io/torchradio/Examples/1_introdu
 ## Assumptions
 - All events take place at baseband.
 - All devices have the same centre frequency and bandwidth.
-- `torchradio` is not intended to replace a high-fidelity simulation. Rather, it is a training ground for developing novel radios. If a radio looks promising, its parameters can be exported for testing in a high-fidelity simulation environment.
+- Torchradio is not intended to replace a high-fidelity simulation. Rather, it is a training ground for developing novel radios. If a radio looks promising, its parameters can be exported for testing in a high-fidelity simulation environment.
 
 
 ## Contributing
 
 New contributors are always welcome! If you would like to contribute, it is recommended you set up your development environment using the following instructions.
 
-Create a new Python virtual environment using your method of choice (e.g., `venv`, `conda`, `pyenv` etc.). Clone this repository and install using
+Create a new Python virtual environment using your method of choice (e.g., venv, conda, pyenv etc.). Clone this repository and install using
 
 ```
 pip install -e .[dev]
 ```
 
-The above command will install `torchradio` along with its core dependencies, as well as dev-specific dependencies for formatting, linting and testing. The `-e` flag installs `torchradio` in editable mode, so you can quickly see the effects of local source code changes without reinstalling `torchradio`. You can test that everything is working as expected by running
+The above command will install Torchradio along with its core dependencies, as well as dev-specific dependencies for formatting, linting and testing. The `-e` flag installs Torchradio in editable mode, so you can quickly see the effects of local source code changes without reinstalling Torchradio. You can test that everything is working as expected by running
 
 ```
 pytest
