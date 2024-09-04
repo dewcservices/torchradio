@@ -1,5 +1,6 @@
 import pytest
 import torch
+
 from torchradio import Receiver, Transmitter
 from torchradio.algorithm.null import (
     get_constant_transmission_algorithm,
@@ -18,7 +19,6 @@ from torchradio.env.null import (
 
 
 class SimpleNonDifferentiableEnvironment(NullEnvironment):
-
     """An example non-differentiable environment to test that `.is_differentiable()` returns False."""
 
     def _propagate(self, tx: dict[str, torch.Tensor]) -> dict[str, torch.Tensor]:
@@ -29,7 +29,6 @@ class SimpleNonDifferentiableEnvironment(NullEnvironment):
 
 
 class NewParamNonDifferentiableEnvironment(NullEnvironment):
-
     """An example non-differentiable environment to test that `.is_differentiable()` returns False."""
 
     def _propagate(self, tx: dict[str, torch.Tensor]) -> dict[str, torch.Tensor]:
@@ -43,7 +42,7 @@ class NewParamNonDifferentiableEnvironment(NullEnvironment):
         }
 
 
-@pytest.fixture()
+@pytest.fixture
 def null_environment() -> NullEnvironment:  # noqa: D103
     return NullEnvironment()
 

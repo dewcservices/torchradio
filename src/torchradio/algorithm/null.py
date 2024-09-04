@@ -1,6 +1,5 @@
 """Simple (null) transmitters for testing and debugging."""
 
-
 import torch
 
 from torchradio import (
@@ -30,6 +29,7 @@ def get_constant_transmission_algorithm(
         Transmission(signal=tensor([[1.+1.j, 1.+1.j, 1.+1.j, 1.+1.j, 1.+1.j],
                 [1.+1.j, 1.+1.j, 1.+1.j, 1.+1.j, 1.+1.j]]), metadata={})
         ```
+
     """
 
     def transmission_algorithm(n_timesteps: int, batch_size: int = 1) -> Transmission:
@@ -52,6 +52,7 @@ def get_null_transmission_algortihm() -> TransmissionAlgorithm:
         Transmission(signal=tensor([[0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j],
                 [0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j]]), metadata={})
         ```
+
     """
     return get_constant_transmission_algorithm(0 + 0j)
 
@@ -69,6 +70,7 @@ def get_null_reception_algorithm() -> ReceptionAlgorithm:
         >>> rx(signal)
         {}
         ```
+
     """
 
     def reception_algorithm(signal: torch.Tensor) -> Reception:  # noqa: ARG001

@@ -9,7 +9,6 @@ from torchradio.env.null import NullEnvironment
 
 @dataclass
 class Bounds3D:
-
     """A 3D region bounded by `[0, 0, 0]` and `[x_max, y_max, z_max]`.
 
     Args:
@@ -27,6 +26,7 @@ class Bounds3D:
         >>> Position(9, -1, 4) in bounds
         False
         ```
+
     """
 
     x_max: float
@@ -54,7 +54,6 @@ class Bounds3D:
 
 
 class BoxEnvironment(NullEnvironment):
-
     """A simple environment defined by a 3D region."""
 
     def __init__(self, x_max: float, y_max: float, z_max: float) -> None:
@@ -111,7 +110,6 @@ class BoxEnvironment(NullEnvironment):
 
 
 class PlanarEnvironment(BoxEnvironment):
-
     """A simple environment defined by a flat 2D region.
 
     Devices must have spatial distributions that place them at a height of z=0.

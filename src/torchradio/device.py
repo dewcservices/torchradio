@@ -14,7 +14,6 @@ from torchradio.types import (
 
 
 class Device:
-
     """The base `Device` class consists of a `SpatialDistribution` that is sampled whenever the device is placed in an environment."""
 
     def __init__(
@@ -70,7 +69,6 @@ class Device:
 
 
 class Transmitter(Device):
-
     """A `Device` that transmits signals into the environment."""
 
     def __init__(
@@ -88,6 +86,7 @@ class Transmitter(Device):
                 which always returns `Position(x=0, y=0, z=0)`.
             max_gain: A saturation limit on transmissions. The real and imaginary
                 components of transmitted signals are capped to `max_gain`.
+
         """
         super().__init__(spatial_distribution)
         self._algorithm = algorithm
@@ -141,7 +140,6 @@ class Transmitter(Device):
 
 
 class Receiver(Device):
-
     """A `Device` that receives signals from the environment."""
 
     def __init__(
@@ -156,6 +154,7 @@ class Receiver(Device):
             spatial_distribution: A `Callable` that randomly samples `Position`s.
                 Defaults to None. If None, a null `SpatialDistribution` is used,
                 which always returns `Position(x=0, y=0, z=0)`.
+
         """
         super().__init__(spatial_distribution)
         self._algorithm = algorithm

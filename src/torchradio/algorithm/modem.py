@@ -10,7 +10,6 @@ from torchradio.types import COMPLEX_DTYPE
 
 
 class Modem:
-
     """Torchradio compatible wrapper for commpy.PSKModem and commpy.QAMModem.
 
     Currently implemented using the third-party `commpy` library. Note that `Modem` does not contain
@@ -23,6 +22,7 @@ class Modem:
         >>> env = NullEnvironment()
         >>> env.place({"tx": modem.tx}, {"rx": modem.rx})
         ```
+
     """
 
     def __init__(
@@ -46,6 +46,7 @@ class Modem:
             ValueError: If `n_symbols` is not a power of 2 or square (square only required for `mode == "qam"`).
             ValueError: If `demod_type not in ["hard", "soft"]`.
             NotImplementedError: If `demod_type == "soft"`.
+
         """
         if mode not in ["psk", "qam"]:
             err = f'{mode=} not in ["psk", "qam"]'
@@ -119,7 +120,6 @@ class Modem:
 
 
 class DSSS(Modem):
-
     """Direct-sequence spread spectrum modulation and demodulation.
 
     Currently implemented using the third-party `commpy` library. Note that `DSSS` does not contain
@@ -133,6 +133,7 @@ class DSSS(Modem):
         >>> env = NullEnvironment()
         >>> env.place({"tx": modem.tx}, {"rx": modem.rx})
         ```
+
     """
 
     _threshold = 0.5
@@ -160,6 +161,7 @@ class DSSS(Modem):
             ValueError: If `n_symbols` is not a power of 2 or square (square only required for `mode == "qam"`).
             ValueError: If `demod_type not in ["hard", "soft"]`.
             NotImplementedError: If `demod_type == "soft"`.
+
         """
         super().__init__(mode, n_symbols, demod_type)
         self._chip_sequence = chip_sequence

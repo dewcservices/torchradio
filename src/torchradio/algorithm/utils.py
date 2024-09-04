@@ -1,4 +1,5 @@
 """Common helper functions for working with algorithms."""
+
 from collections.abc import Generator, Iterable
 
 import torch

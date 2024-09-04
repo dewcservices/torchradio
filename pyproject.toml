@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "torchradio"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="Daniel Gibbons", email="daniel.gibbons@dewc.com" },
 ]
@@ -17,24 +17,23 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
+    "numpy",
+    "scikit-commpy",
+    "torch",
+]
+
+[project.optional-dependencies]
+notebooks = [
     "chart_studio",
     "ipykernel",
     "ipywidgets",
     "kaleido",
-    "loguru",
     "matplotlib",
-    "nbformat",
-    "numpy",
     "pandas",
-    "scikit-commpy",
-    "scipy",
-    "torch",
     "tqdm",
-    "types-tqdm",
     "widgetsnbextension",
 ]
 
-[project.optional-dependencies]
 docs = [
     "mkdocs",
     "mkdocs-jupyter",
@@ -45,16 +44,14 @@ docs = [
 ]
 
 dev = [
-    "black",
-    "black[jupyter]",
     "coverage",
-    "lefthook",
     "mypy",
-    "nbqa",
     "pre-commit",
     "pytest",
     "ruff",
     "torchradio[docs]",
+    "torchradio[notebooks]",
+    "types-tqdm",
 ]
 
 [project.urls]
@@ -65,21 +62,24 @@ dev = [
 disable_error_code = ["call-overload"]
 
 [tool.ruff]
-select = ["ALL"]
+lint.select = ["ALL"]
 
-ignore = [
+lint.ignore = [
     "ANN002",
     "ANN003",
     "ANN101",
     "ANN102",
+    "COM812",
     "D100",
     "D104",
+    "D203",
     "D211",
     "D213",
     "D407",
     "E501",
     "G004",
     "INP001",
+    "ISC001",
     "PGH003",
     "T201",
     "T203",
